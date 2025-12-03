@@ -4,7 +4,7 @@ import { BasePage } from './BasePage';
 export class CartPage extends BasePage {
     
     private pageTitle: Locator = this.page.locator('.title');
-    private inventoryContainer: Locator = this.page.locator('#inventory_container');
+    private cartContainer: Locator = this.page.locator('#cart_contents_container');
     private checkout: Locator = this.page.locator('#checkout');
 
     constructor(page: Page) {
@@ -16,7 +16,7 @@ export class CartPage extends BasePage {
     }
 
     private productCard(productName: string): Locator {
-        return this.inventoryContainer.locator('.inventory_item').filter({
+        return this.cartContainer.locator('.cart_item').filter({
             has: this.page.locator('.inventory_item_name', {hasText:productName})
         });
     }

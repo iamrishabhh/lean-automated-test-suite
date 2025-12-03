@@ -8,9 +8,8 @@ export class CheckoutPage extends BasePage {
     private customerLasttName: Locator = this.page.locator('#last-name');
     private customerPostalCode: Locator = this.page.locator('#postal-code');
     private continueButton: Locator = this.page.locator('#continue');
-
+    private checkoutContainer: Locator = this.page.locator('#checkout_summary_container');
     private itemPrices: Locator = this.page.locator('.inventory_item_price'); 
-    private itemTotal: Locator = this.page.locator('[data-test="subtotal-label"]');
     private taxAmount: Locator = this.page.locator('[data-test="tax-label"]');
     private totalAmount: Locator = this.page.locator('[data-test="total-label"]');
     private finishButton : Locator = this.page.locator('#finish');
@@ -32,6 +31,18 @@ export class CheckoutPage extends BasePage {
 
     async clickContinue() {
         await this.continueButton.click();
+    }
+
+    private productCard(productName: string): Locator {
+        return this.checkoutContainer.locator('.cart_item').filter({
+            has: this.page.locator('.inventory_item_name', {hasText:productName})
+        });
+    }
+
+    async verifyMultipleProductsDisplayedInCheckout(productNames: string[]){
+        for (const productName of productNames) {
+            await expect(this.productCard(productName)).toBeVisible();
+        }
     }
 
     async extractNumericPrice(ele: Locator): Promise<number> {

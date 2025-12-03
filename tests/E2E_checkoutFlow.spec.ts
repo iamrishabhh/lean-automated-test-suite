@@ -51,8 +51,24 @@ test.describe('User completing a successful checkout flow', () => {
 
   test('Verify user is able to see added products in the cart page', async () => {
     await productsPage.goToCart();
+    await cartPage.verifyURLContains('cart');
     await cartPage.verifyCartTitle();
     await cartPage.verifyMultipleProductsAddedToCart(products);
+  })
+
+  test('Verify user is able to add information in the checkout page', async () => {
+    await cartPage.goToCheckout();
+    await cartPage.verifyURLContains('checkout-step-one');
+    await checkoutPage.enterInformation(checkoutInfo.firstName,checkoutInfo.lastName,checkoutInfo.postalCode);
+    await checkoutPage.clickContinue();
+  })
+
+  test('Verify the products price plus tax price is equal to total price', async() => {
+    await cartPage.verifyURLContains('checkout-step-two');
+    await checkoutPage.verifyMultipleProductsDisplayedInCheckout(products);
+    await checkoutPage.verifyTotalPaymentPrice();
+    await checkoutPage.clickFinish();
+    await checkoutPage.verifyCheckoutCompleteSuccessMsg();
   })
 
 })
