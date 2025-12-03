@@ -20,7 +20,7 @@ export class CheckoutPage extends BasePage {
         super(page);
     }
 
-    async verifyCartTitle(){
+    async verifyCheckoutTitle(){
         await expect(this.pageTitle).toHaveText('Checkout: Your Information');
     }
 

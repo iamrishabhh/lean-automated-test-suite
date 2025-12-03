@@ -8,6 +8,7 @@ export default defineConfig({
   timeout: 30_000,
   fullyParallel: true,
   use: {
+    baseURL,
     headless: false,
     viewport: { width: 1280, height: 720 },
     screenshot: 'only-on-failure',

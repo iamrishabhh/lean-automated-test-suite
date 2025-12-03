@@ -13,7 +13,9 @@
     "Sauce Labs Bike Light",
     "Sauce Labs Bolt T-Shirt"
   ],
-  "userFirstName": "John",
-  "userLastName": "Doe",
-  "PostalCode": "12345"
+  "checkoutInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "postalCode": "12345"
+  }
 }

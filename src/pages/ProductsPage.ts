@@ -18,7 +18,7 @@ export class ProductsPage extends BasePage {
     }
 
     private productCard(productName: string): Locator {
-        return this.inventoryContainer.locator('.inventory-item').filter({
+        return this.inventoryContainer.locator('.inventory_item').filter({
             has: this.page.locator('.inventory_item_name', {hasText:productName})
         });
     }
