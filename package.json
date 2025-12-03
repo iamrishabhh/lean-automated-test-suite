@@ -1,0 +1,26 @@
+{
+  "name": "lean-automated-test-suite",
+  "version": "1.0.0",
+  "description": "Test suite for Lean Tech",
+  "homepage": "https://github.com/iamrishabhh/lean-automated-test-suite#readme",
+  "bugs": {
+    "url": "https://github.com/iamrishabhh/lean-automated-test-suite/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamrishabhh/lean-automated-test-suite.git"
+  },
+  "license": "ISC",
+  "author": "iamrishabhh",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
+}
