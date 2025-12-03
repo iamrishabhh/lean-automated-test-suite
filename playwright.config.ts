@@ -6,11 +6,11 @@ const baseURL = testData.env.baseURL;
 export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
-  fullyParallel: true,
+  fullyParallel: false,
   use: {
     baseURL,
     headless: false,
-    viewport: { width: 1280, height: 720 },
+    viewport: { width: 1920, height: 1080 },
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry'
@@ -23,18 +23,22 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-        viewport: { width: 1280, height: 720 },
+        viewport: { width: 1920, height: 1080 },
       },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],
+        viewport: { width: 1920, height: 1080 },
+       },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],
+        viewport: { width: 1920, height: 1080 },
+       },
     },
 
     /* Test against mobile viewports. */
