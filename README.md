@@ -29,6 +29,7 @@ cd lean-automated-test-suite
 
 ```bash
 npm install
+npx playwright install
 ```
 
 This will install all required packages including Playwright and its browser dependencies.
@@ -40,7 +41,7 @@ Update `test-data/testData.json` (baseURL, credentials, checkout info) to target
 ```json
 {
   "env": {
-    "baseURL": "https://your-app-url.com"
+    "baseURL": "https://www.saucedemo.com"
   },
   "users": {
     "standardUser": {
@@ -122,13 +123,6 @@ The test suite validates the complete checkout flow:
 4. **Checkout Information** - Enter shipping details
 5. **Payment Verification** - Validate pricing
 6. **Order Completion** - Complete order successfully
-
-## Troubleshooting
-
-### Browser Not Found
-```bash
-npx playwright install
-```
 
 ### Tests Failing
 - Verify baseURL in `test-data/testData.json`
