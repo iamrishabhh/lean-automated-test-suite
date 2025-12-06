@@ -1,5 +1,5 @@
 import { test, Page, BrowserContext } from '@playwright/test';
-import testData from '../test-data/testData.json'
+import testData from '@data/testData.json'
 
 import { LoginPage } from '@pages/LoginPage';
 import { ProductsPage } from '@pages/ProductsPage';
@@ -16,7 +16,7 @@ let productsPage: ProductsPage;
 let cartPage: CartPage;
 let checkoutPage: CheckoutPage;
 
-test.describe('User completing a successful checkout flow', () => {
+test.describe('Complete E2E flow of Login → Add to Cart → Checkout → Order Complete', () => {
 
   test.beforeAll( async ({ browser }) => {
 
