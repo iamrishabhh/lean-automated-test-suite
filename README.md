@@ -92,7 +92,7 @@ npx playwright test --debug
 
 ## Test Behavior
 
-- The E2E test selects 3 random available products on the Sauce Labs demo site, adds them to the cart, verifies they are present and totals match, completes checkout, and asserts successful order completion.
+- The E2E test selects any three available products on the Sauce Labs demo site, adds them to the cart, verifies they are present and totals match, completes checkout, and asserts successful order completion.
 - Assertions include: items present in cart, correct item names/prices, subtotal/total calculation, and confirmation message on order completion.
 
 ## Project Structure
