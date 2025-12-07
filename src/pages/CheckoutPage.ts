@@ -54,7 +54,7 @@ export class CheckoutPage extends BasePage {
         const count = await this.itemPrices.count();
         let sum = 0;
 
-        for (let i =0 ; i < count; i++){
+        for (let i = 0 ; i < count; i++){
             const price = await this.extractNumericPrice(this.itemPrices.nth(i));
             sum = sum + price;
         }
